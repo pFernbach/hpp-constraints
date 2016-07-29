@@ -134,7 +134,7 @@ namespace hpp {
 	for (ObjectVector_t::const_iterator it2 = objs2_.begin ();
 	     it2 != objs2_.end (); ++it2) {
 	  CollisionObjectConstPtr_t obj2 (*it2);
-          data_.addCollisionPair(obj1->indexInModel(), obj2->indexInModel());
+          robot_->geomModel().addCollisionPair(se3::CollisionPair(obj1->indexInModel(), obj2->indexInModel()));
 	}
       }
     }
